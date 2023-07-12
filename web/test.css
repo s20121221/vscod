@@ -1,0 +1,64 @@
+img{
+    max-width: 100%;
+    height: auto;
+}
+.shop{
+    display: flex;
+    margin: auto;
+}
+.shopbut{
+    text-align: center;
+    margin: auto;
+}
+.shopimg{
+    max-width: 100%;
+}
+.register{
+    text-align: center;
+    margin-top: 100px;
+}
+.ground{
+    margin:auto;
+    border-style:solid;
+    width: 600px;
+    height: 600px;
+}
+.text{
+    text-align: center;
+}
+.account{
+    text-align: center;
+}
+.password{
+    margin-top: 100px;
+    text-align: center;
+
+}
+.butsty
+{
+    margin: 100px;
+    display: flex
+}
+.but{
+    margin: auto;
+}
+.back{
+    margin-top: 50px;
+    text-align: center;
+}
+.name{
+    text-align: center;
+    margin-top: 50px;
+}
+.contorl{
+    margin: auto;
+    border-style:solid;
+    width: 600px;
+    height: 600px;
+}
+.backstage{
+    text-align: center;
+}
+.backname{
+    margin-top: 30px;
+}
