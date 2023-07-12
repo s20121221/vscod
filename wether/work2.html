@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ECharts</title>
+    <!-- 引入刚刚下载的 ECharts 文件 -->
+    <script src="echarts.js"></script>
+    <link rel="stylesheet" type="text/css" href="work2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wether</title>
+</head>
+
+<body>
+
+    <div class="flex">
+        <div class="left">
+            <h1>城市</h1>
+            <h3>台中市</h3>
+            <h6>日期時間2023-07-14</h6>
+        </div>
+        <div class="right">
+            <h1>區域</h1>
+            <h3>西區</h3>
+        </div>
+    </div>
+    <div class="flex">
+        <div class="wether">
+            <h3>最高溫度</h3>
+            <h3>35</h3>
+        </div>
+        <div class="wether">
+            <h3>最低溫度</h3>
+            <h3>27</h3>
+        </div>
+        <div class="wether">
+            <h3>降雨機率</h3>
+            <h3>10%</h3>
+        </div>
+        <div class="wether">
+            <h3>體感最高溫度</h3>
+            <h3>41</h3>
+        </div>
+        <div class="wether">
+            <h3>體感最低溫度</h3>
+            <h3>32</h3>
+        </div>
+        <div class="wether">
+            <h3>相對溼度</h3>
+            <h3>70%</h3>
+        </div>
+        <div class="wether">
+            <h3>蒲福風級</h3>
+            <h3>2</h3>
+        </div>
+        <div class="wether">
+            <h3>風向</h3>
+            <h3>西北風</h3>
+        </div>
+    </div>
+
+    <div id="main" style="width: 1000px;height:400px;margin: auto;"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+        option = {
+            xAxis: {
+                type: 'category',
+                data: ['最高溫度', '最低溫度', '降雨機率%', '體感最高溫度', '體感最低溫度', '相對溼度%', '蒲福風級']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    data: [35, 27, 10, 41, 32, 70, 2],
+                    type: 'bar'
+                }
+            ]
+        };
+        myChart.setOption(option);
+    </script>
+
+
+</body>
+
+</html>

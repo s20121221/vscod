@@ -1,0 +1,35 @@
+.flex{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.left,.right{
+    flex: 1 
+
+}
+.wether{
+    margin: auto;
+    margin-bottom: 10px;
+    flex: 0 0 calc(25% - 20px);
+    text-align: center;
+    border-style:solid;
+    background-color: rgb(250, 197, 83);
+    border-radius: 20px;
+}
+.left{
+    margin: 10px;
+    text-align: center;
+    border-style:solid;
+    background-color: rgb(241, 160, 160);
+    border-radius: 20px;
+}
+.right{
+    margin: 10px;
+    text-align: center;
+    border-style:solid;
+    background-color: rgb(147, 147, 253);
+    border-radius: 20px;
+}
+.jsc{
+    text-align: center;
+}
