@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="assets/new_asus_ico_256x256.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="test.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登入</title>
+  </head>
+  <body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+      integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <div class="register">
+      <h2>登入系統</h2>
+    </div>
+    <div class="ground">
+      <div class="account">
+        <h3>帳號</h3>
+        <input type="text" style="font-size: 20px" id="account" />
+      </div>
+      <div class="password">
+        <h3>密碼</h3>
+        <input type="text" style="font-size: 20px" id="password" />
+      </div>
+      <div class="butsty">
+        <a href="register.html" class="but">
+          <button type="button" class="btn btn-danger">返回註冊</button>
+        </a>
+        <a class="but">
+          <button type="button" class="btn btn-danger" onclick="sigin()">
+            登入
+          </button>
+        </a>
+        <a href="test.html" class="but">
+          <button type="button" class="btn btn-danger">返回首頁</button>
+        </a>
+      </div>
+    </div>
+    <script>
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("isAdmin");
+      function sigin() {
+        const account = document.getElementById("account").value;
+        const password = document.getElementById("password").value;
+        axios
+          .get("http://localhost:3000/user")
+          .then((res) => {
+            
+            a = res.data;
+            console.log(password)
+            let i = 0;
+            let b = 0;
+
+            while (i != a.length) {
+              if (a[i].email == account && a[i].password==password) {
+                b = i+1;
+              }
+              i++;
+            }
+            if (b == 0) {
+              alert("帳號或密碼錯誤");
+            }
+            else {
+              alert("登入成功");
+
+              if(b-1==2)
+              {
+                localStorage.setItem("isAdmin", "true");
+              }
+              localStorage.setItem("isLoggedIn", "true");
+              window.location.href="test.html"
+            }
+          })
+          .catch((err) => {
+            console.log("API 出錯拉!", err);
+          });
+      }
+    </script>
+  </body>
+</html>
